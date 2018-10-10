@@ -24,6 +24,7 @@ class BandInfoTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.largeTitleDisplayMode = .never
         
+        
         NewSearchService.getArtist(id: artistId!, completion: { newArtist in
             self.artist = newArtist
             self.tableView.reloadData()
@@ -58,6 +59,16 @@ class BandInfoTableViewController: UITableViewController {
            return 500
         } else {
             return 120
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAlbums" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                guard let newVC = segue.destination as? AlbumsTableViewController else { return }
+                guard let id = albumList[indexPath.row].id else { return }
+                newVC.albumId = id
+            }
         }
     }
     

@@ -21,6 +21,9 @@
 		787C5119208CC9CA004C832F /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787C5118208CC9CA004C832F /* AlbumTableViewCell.swift */; };
 		788F18EF214EBD4100802C31 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F18EE214EBD4100802C31 /* SearchTableViewController.swift */; };
 		788F18F1214EBD6000802C31 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F18F0214EBD6000802C31 /* SearchTableViewCell.swift */; };
+		78A2045B216DFD8C009012FA /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2045A216DFD8C009012FA /* AlbumsTableViewController.swift */; };
+		78A2045D216DFDFF009012FA /* AlbumPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2045C216DFDFF009012FA /* AlbumPictureCell.swift */; };
+		78A2045F216DFE17009012FA /* TracklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2045E216DFE17009012FA /* TracklistCell.swift */; };
 		78AF6E4C214EF4510014BCB5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF6E4B214EF4510014BCB5 /* Colors.swift */; };
 		78CC6578202B902300455B1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78EC659D200BAD820053BFB9 /* Main.storyboard */; };
 		78EC659A200BAD820053BFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC6599200BAD820053BFB9 /* AppDelegate.swift */; };
@@ -52,6 +55,9 @@
 		787C5118208CC9CA004C832F /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		788F18EE214EBD4100802C31 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		788F18F0214EBD6000802C31 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		78A2045A216DFD8C009012FA /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
+		78A2045C216DFDFF009012FA /* AlbumPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPictureCell.swift; sourceTree = "<group>"; };
+		78A2045E216DFE17009012FA /* TracklistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracklistCell.swift; sourceTree = "<group>"; };
 		78AF6E4B214EF4510014BCB5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		78CC657A202B945900455B1E /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EC6596200BAD820053BFB9 /* Discogs Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discogs Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +127,9 @@
 				78EEE7762155219700B924C7 /* BandInfoViewCell.swift */,
 				78EEE778215522FF00B924C7 /* BandAlbumsCell.swift */,
 				781D2EFF215A810500E56C6E /* BandInfoCollectionViewCell.swift */,
+				78A2045A216DFD8C009012FA /* AlbumsTableViewController.swift */,
+				78A2045C216DFDFF009012FA /* AlbumPictureCell.swift */,
+				78A2045E216DFE17009012FA /* TracklistCell.swift */,
 				78EC659D200BAD820053BFB9 /* Main.storyboard */,
 				78EC65A0200BAD820053BFB9 /* Assets.xcassets */,
 				78EC65A2200BAD820053BFB9 /* LaunchScreen.storyboard */,
@@ -291,9 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A2045B216DFD8C009012FA /* AlbumsTableViewController.swift in Sources */,
 				786B1D5E201A435C00D456BF /* BandViewControllerService.swift in Sources */,
 				7845B3832014CBA400E7C43A /* AuthorizeService.swift in Sources */,
 				7845B38C201503B600E7C43A /* MainViewControllerCell.swift in Sources */,
+				78A2045F216DFE17009012FA /* TracklistCell.swift in Sources */,
 				788F18EF214EBD4100802C31 /* SearchTableViewController.swift in Sources */,
 				787C5119208CC9CA004C832F /* AlbumTableViewCell.swift in Sources */,
 				78EC659C200BAD820053BFB9 /* ViewController.swift in Sources */,
@@ -312,6 +323,7 @@
 				7845B3872014E10000E7C43A /* MainViewController.swift in Sources */,
 				786B1D5A201A432100D456BF /* BandViewController.swift in Sources */,
 				781D2F00215A810500E56C6E /* BandInfoCollectionViewCell.swift in Sources */,
+				78A2045D216DFDFF009012FA /* AlbumPictureCell.swift in Sources */,
 				78EEE77D215531E000B924C7 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

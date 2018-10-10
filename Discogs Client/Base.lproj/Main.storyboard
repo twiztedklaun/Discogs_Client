@@ -276,6 +276,7 @@
                                     <outlet property="albumImage" destination="MfH-6j-7oi" id="Ifv-2T-cbC"/>
                                     <outlet property="albumTitle" destination="Z7h-PG-8W2" id="fYC-1t-QKP"/>
                                     <outlet property="albumYear" destination="aXq-oa-yci" id="ter-PF-3Qs"/>
+                                    <segue destination="AFL-yy-mDS" kind="show" identifier="toAlbums" id="HSe-vd-vNn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -288,6 +289,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGI-5G-iH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524" y="848.72563718140941"/>
+        </scene>
+        <!--Albums Table View Controller-->
+        <scene sceneID="X54-Aa-dIm">
+            <objects>
+                <tableViewController id="AFL-yy-mDS" customClass="AlbumsTableViewController" customModule="Discogs_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9zj-oE-2D2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumPicture" rowHeight="304" id="EKD-6T-aE7" customClass="AlbumPictureCell" customModule="Discogs_Client" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="304"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EKD-6T-aE7" id="uxX-vM-A8b">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="303.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ni1-t8-3FC">
+                                            <rect key="frame" x="16" y="11" width="343" height="282"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ni1-t8-3FC" firstAttribute="trailing" secondItem="uxX-vM-A8b" secondAttribute="trailingMargin" id="6R9-Hd-Vz8"/>
+                                        <constraint firstItem="Ni1-t8-3FC" firstAttribute="leading" secondItem="uxX-vM-A8b" secondAttribute="leadingMargin" id="Bww-N0-F4D"/>
+                                        <constraint firstItem="Ni1-t8-3FC" firstAttribute="top" secondItem="uxX-vM-A8b" secondAttribute="topMargin" id="nZs-CQ-Icx"/>
+                                        <constraint firstItem="Ni1-t8-3FC" firstAttribute="bottom" secondItem="uxX-vM-A8b" secondAttribute="bottomMargin" id="vBX-9P-7Dr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumImage" destination="Ni1-t8-3FC" id="yUB-H0-Vj5"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lyricsList" rowHeight="39" id="QMW-21-rUP" customClass="TracklistCell" customModule="Discogs_Client" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="332" width="375" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QMW-21-rUP" id="yIY-17-ULu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="38.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd9-kf-8rP">
+                                            <rect key="frame" x="16" y="9" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hd9-kf-8rP" firstAttribute="top" secondItem="yIY-17-ULu" secondAttribute="top" constant="9" id="5Bh-n1-nuE"/>
+                                        <constraint firstAttribute="trailing" secondItem="hd9-kf-8rP" secondAttribute="trailing" constant="16" id="GLA-gP-FNV"/>
+                                        <constraint firstAttribute="bottom" secondItem="hd9-kf-8rP" secondAttribute="bottom" constant="8.5" id="gIO-WH-6py"/>
+                                        <constraint firstItem="hd9-kf-8rP" firstAttribute="leading" secondItem="yIY-17-ULu" secondAttribute="leading" constant="16" id="kAe-vd-lIK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lyricsLabel" destination="hd9-kf-8rP" id="T4d-LE-pWN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AFL-yy-mDS" id="xyc-ll-4VE"/>
+                            <outlet property="delegate" destination="AFL-yy-mDS" id="8gq-FF-ZJn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lm3-El-Ng5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3341.5999999999999" y="848.72563718140941"/>
         </scene>
         <!--Item-->
         <scene sceneID="0i8-ls-MZB">
