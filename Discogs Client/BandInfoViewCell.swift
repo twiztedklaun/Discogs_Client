@@ -34,6 +34,7 @@ class BandInfoViewCell: UITableViewCell {
         }
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

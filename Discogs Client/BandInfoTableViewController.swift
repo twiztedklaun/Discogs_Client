@@ -24,7 +24,6 @@ class BandInfoTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.largeTitleDisplayMode = .never
         
-        
         NewSearchService.getArtist(id: artistId!, completion: { newArtist in
             self.artist = newArtist
             self.tableView.reloadData()
@@ -79,6 +78,7 @@ class BandInfoTableViewController: UITableViewController {
             cell.bandName.text = artist?.name
             cell.bioTextView.text = artist?.bio
             cell.relatedBands = artist?.relatedBands
+            cell.pagerView.transformer = FSPagerViewTransformer(type: .depth)
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NewArtist: NSObject, NSCoding {
     
@@ -23,6 +24,23 @@ class NewArtist: NSObject, NSCoding {
         self.bio = bio
         self.relatedBands = relatedBands
     }
+    
+    init? (json: JSON) {
+        guard
+            let name = json["name"].stringValue as? String,
+            let id = json["id"].intValue as? Int,
+            let images = json["images"].arrayValue.map({$0["uri"].stringValue}) as? [String],
+            let bio = json["profile"].stringValue as? String,
+            let relatedBands = json["groups"].arrayValue.map({ NewArtist(name: $0["name"].stringValue, id: $0["id"].intValue, images: nil, bio: nil, relatedBands: nil) }) as? [NewArtist]
+    else {
+        return nil
+    }
+        self.name = name
+        self.id = id
+        self.images = images
+        self.bio = bio
+        self.relatedBands = relatedBands
+}
     
     required init(coder decoder: NSCoder) {
         self.name = decoder.decodeObject(forKey: "name") as? String ?? ""

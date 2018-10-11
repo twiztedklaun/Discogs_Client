@@ -48,13 +48,7 @@ class NewSearchService {
         Alamofire.request(baseURL+databaseSearch, parameters: parameters).responseJSON(completionHandler: { response in
             if let result = response.result.value {
                 let responseJson = JSON(result)
-//                print(responseJson)
-                let artist = NewArtist(name: responseJson["name"].stringValue,
-                                       id: responseJson["id"].intValue,
-                                       images: responseJson["images"].arrayValue.map({$0["uri"].stringValue}),
-                                       bio: responseJson["profile"].stringValue,
-                                       relatedBands: responseJson["groups"].arrayValue.map({ NewArtist(name: $0["name"].stringValue, id: $0["id"].intValue, images: nil, bio: nil, relatedBands: nil) })
-                                       )
+                guard let artist = NewArtist(json: responseJson) else { fatalError() }
                 completion(artist)
             }
         })
