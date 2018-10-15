@@ -12,5 +12,6 @@ target 'Discogs Client' do
  pod 'FSPagerView', '~> 0.7.1'
  pod "ViewAnimator"
  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+ pod 'NVActivityIndicatorView'
 
 end

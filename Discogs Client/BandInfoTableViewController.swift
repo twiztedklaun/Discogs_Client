@@ -10,13 +10,12 @@ import UIKit
 import FSPagerView
 import AlamofireImage
 import Alamofire
+import NVActivityIndicatorView
 
 class BandInfoTableViewController: UITableViewController {
     
     var artistId: Int?
     var artist: NewArtist?
-    
-//    var albumList = [NewAlbum]()
     
     var mainAlbumList = [NewAlbum]()
     var appearanceAlbumList = [NewAlbum]()
@@ -110,52 +109,23 @@ class BandInfoTableViewController: UITableViewController {
             cell.pagerView.transformer = FSPagerViewTransformer(type: .depth)
             cell.navController = self.navigationController
             return cell
-        } else if indexPath.section == 1 {
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell
-            if let imageURL = mainAlbumList[indexPath.row].image {
-                if let url = URL(string: imageURL) {
-                    cell.albumImage?.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "product--preview"))
-                }
-            }
-            cell.albumYear.text = String(describing: mainAlbumList[indexPath.row].year!)
-            cell.albumTitle.text = mainAlbumList[indexPath.row].title
             
-            return cell
-        } else if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell
-            if let imageURL = appearanceAlbumList[indexPath.row].image {
-                if let url = URL(string: imageURL) {
-                    cell.albumImage?.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "product--preview"))
-                }
+            switch indexPath.section {
+            case 1:
+                cell.configureCell(album: mainAlbumList[indexPath.row])
+            case 2:
+                cell.configureCell(album: appearanceAlbumList[indexPath.row])
+            case 3:
+                cell.configureCell(album: trackAppearanceAlbumList[indexPath.row])
+            case 4:
+                cell.configureCell(album: unofficialReleasesAlbumList[indexPath.row])
+            default:
+                fatalError()
             }
-            cell.albumYear.text = String(describing: appearanceAlbumList[indexPath.row].year!)
-            cell.albumTitle.text = appearanceAlbumList[indexPath.row].title
-            
-            return cell
-        } else if indexPath.section == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell
-            if let imageURL = trackAppearanceAlbumList[indexPath.row].image {
-                if let url = URL(string: imageURL) {
-                    cell.albumImage?.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "product--preview"))
-                }
-            }
-            cell.albumYear.text = String(describing: trackAppearanceAlbumList[indexPath.row].year!)
-            cell.albumTitle.text = trackAppearanceAlbumList[indexPath.row].title
-            
-            return cell
-        } else if indexPath.section == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell
-            if let imageURL = unofficialReleasesAlbumList[indexPath.row].image {
-                if let url = URL(string: imageURL) {
-                    cell.albumImage?.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "product--preview"))
-                }
-            }
-            cell.albumYear.text = String(describing: unofficialReleasesAlbumList[indexPath.row].year!)
-            cell.albumTitle.text = unofficialReleasesAlbumList[indexPath.row].title
-            
             return cell
         }
-        fatalError()
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

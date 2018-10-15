@@ -14,7 +14,15 @@ class BandAlbumsCell: UITableViewCell {
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var albumYear: UILabel!
     
-    
+    func configureCell (album: NewAlbum) {
+        if let imageURL = album.image {
+            if let url = URL(string: imageURL) {
+                self.albumImage?.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "product--preview"))
+            }
+        }
+        self.albumYear.text = String(describing: album.year!)
+        self.albumTitle.text = album.title
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
