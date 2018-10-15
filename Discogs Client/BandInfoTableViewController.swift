@@ -16,6 +16,7 @@ class BandInfoTableViewController: UITableViewController {
     var artistId: Int?
     var artist: NewArtist?
     var albumList = [NewAlbum]()
+    
 
     
     override func viewDidLoad() {
@@ -79,6 +80,7 @@ class BandInfoTableViewController: UITableViewController {
             cell.bioTextView.text = artist?.bio
             cell.relatedBands = artist?.relatedBands
             cell.pagerView.transformer = FSPagerViewTransformer(type: .depth)
+            cell.navController = self.navigationController
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell
@@ -89,6 +91,7 @@ class BandInfoTableViewController: UITableViewController {
             }
             cell.albumYear.text = String(describing: albumList[indexPath.row].year!)
             cell.albumTitle.text = albumList[indexPath.row].title
+            
             return cell
         }
         fatalError()

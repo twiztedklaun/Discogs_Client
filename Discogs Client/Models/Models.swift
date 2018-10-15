@@ -26,15 +26,12 @@ class NewArtist: NSObject, NSCoding {
     }
     
     init? (json: JSON) {
-        guard
-            let name = json["name"].stringValue as? String,
-            let id = json["id"].intValue as? Int,
-            let images = json["images"].arrayValue.map({$0["uri"].stringValue}) as? [String],
-            let bio = json["profile"].stringValue as? String,
-            let relatedBands = json["groups"].arrayValue.map({ NewArtist(name: $0["name"].stringValue, id: $0["id"].intValue, images: nil, bio: nil, relatedBands: nil) }) as? [NewArtist]
-    else {
-        return nil
-    }
+            let name = json["name"].stringValue
+            let id = json["id"].intValue
+            let images = json["images"].arrayValue.map({$0["uri"].stringValue})
+            let bio = json["profile"].stringValue
+            let relatedBands = json["groups"].arrayValue.map({ NewArtist(name: $0["name"].stringValue, id: $0["id"].intValue, images: nil, bio: nil, relatedBands: nil) })
+    
         self.name = name
         self.id = id
         self.images = images

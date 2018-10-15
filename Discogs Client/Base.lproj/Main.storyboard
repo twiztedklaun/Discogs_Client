@@ -131,13 +131,13 @@
         <!--Band Info Table View Controller-->
         <scene sceneID="7jc-PB-ftR">
             <objects>
-                <tableViewController id="gfL-8U-MSn" customClass="BandInfoTableViewController" customModule="Discogs_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BandInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfL-8U-MSn" customClass="BandInfoTableViewController" customModule="Discogs_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hev-0y-dzK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bandInfoCell" rowHeight="500" id="pYK-jH-H5B" customClass="BandInfoViewCell" customModule="Discogs_Client" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="bandInfoCell" rowHeight="500" id="pYK-jH-H5B" customClass="BandInfoViewCell" customModule="Discogs_Client" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pYK-jH-H5B" id="t3d-zx-s86">
@@ -288,7 +288,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGI-5G-iH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2524" y="848.72563718140941"/>
+            <point key="canvasLocation" x="2578" y="788"/>
         </scene>
         <!--Albums Table View Controller-->
         <scene sceneID="X54-Aa-dIm">

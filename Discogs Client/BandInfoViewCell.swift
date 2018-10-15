@@ -13,6 +13,8 @@ import Alamofire
 
 class BandInfoViewCell: UITableViewCell {
 
+    var navController: UINavigationController? = nil
+    
     @IBOutlet weak var bandName: UILabel!
     @IBOutlet weak var relatedBandsCpllectionView: UICollectionView!
 
@@ -64,6 +66,7 @@ extension BandInfoViewCell: FSPagerViewDelegate, FSPagerViewDataSource {
 }
 
 extension BandInfoViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return relatedBands?.count ?? 0
     }
@@ -71,20 +74,20 @@ extension BandInfoViewCell: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "relatedBands", for: indexPath) as! BandInfoCollectionViewCell
         cell.relatedBandsLabel.text = relatedBands?[indexPath.row].name
-        //        cell.relatedBandsLabel.sizeToFit()
+        
         cell.sizeToFit()
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        if let cell = collectionView.cellForItem(at: indexPath)
-//            {
-//                let newCell = cell as! BandInfoCollectionViewCell
-//                let labelBounds = newCell.relatedBandsLabel.bounds
-//                return CGSize(width: labelBounds.width, height: 10)
-//        } else {
-//            return CGSize(width: 0, height: 0)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "BandInfo") as! BandInfoTableViewController
+              
+        let artistId = relatedBands?[indexPath.row].id
+        vc.artistId = artistId
+
+        navController?.show(vc, sender: self)
+    }
+    
 }
