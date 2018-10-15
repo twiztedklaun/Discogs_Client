@@ -66,7 +66,11 @@ class BandInfoTableViewController: UITableViewController {
         
         switch section {
         case 0:
-            return 1
+            if artist != nil {
+              return 1
+            } else {
+                return 0
+            }
         case 1:
             return mainAlbumList.count
         case 2:
@@ -102,11 +106,7 @@ class BandInfoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bandInfoCell", for: indexPath) as! BandInfoViewCell
-            cell.imageUrls = artist?.images ?? [String]()
-            cell.bandName.text = artist?.name
-            cell.bioTextView.text = artist?.bio
-            cell.relatedBands = artist?.relatedBands
-            cell.pagerView.transformer = FSPagerViewTransformer(type: .depth)
+            cell.configureCell(artist: artist!)
             cell.navController = self.navigationController
             return cell
         } else {

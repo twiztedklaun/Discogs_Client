@@ -36,6 +36,14 @@ class BandInfoViewCell: UITableViewCell {
         }
     }
     
+    func configureCell (artist: NewArtist) {
+        self.imageUrls = artist.images ?? [String]()
+        self.bandName.text = artist.name
+        self.bioTextView.text = artist.bio
+        self.relatedBands = artist.relatedBands
+        self.pagerView.transformer = FSPagerViewTransformer(type: .depth)
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

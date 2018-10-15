@@ -23,6 +23,7 @@ class BandAlbumsCell: UITableViewCell {
         self.albumYear.text = String(describing: album.year!)
         self.albumTitle.text = album.title
     }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
