@@ -86,7 +86,7 @@ class NewSearchService {
         Alamofire.request(baseURL+artistUrl, parameters: parameters).responseJSON(completionHandler: { response in
             if let result = response.result.value {
                 let responseJson = JSON(result)
-                print(responseJson)
+//                print(responseJson)
                 var artistImageList = [String]()
                 
                 for (_, image) in responseJson["images"] {
@@ -110,10 +110,10 @@ class NewSearchService {
         Alamofire.request(baseURL+artistReleaseUrl, parameters: parameters).responseJSON(completionHandler: { response in
             if let result = response.result.value {
                 let responseJson = JSON(result)
-                //                print(responseJson)
+//                print(responseJson)
                 var albumsList = [NewAlbum]()
                 for (_, release) in responseJson["releases"] {
-                    let album = NewAlbum(image: release["thumb"].stringValue, title: release["title"].stringValue, id: release["id"].intValue, year: release["year"].intValue)
+                    let album = NewAlbum(image: release["thumb"].stringValue, title: release["title"].stringValue, id: release["id"].intValue, year: release["year"].intValue, role: release["role"].stringValue)
                     albumsList.append(album)
                 }
                 completion(albumsList)

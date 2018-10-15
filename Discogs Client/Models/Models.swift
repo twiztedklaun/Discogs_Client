@@ -61,12 +61,14 @@ class NewAlbum {
     var year: Int?
     var tracklist = [String]()
     var qualityImage = ""
+    var role: String?
     
-    init(image: String, title: String, id: Int, year: Int) {
+    init(image: String, title: String, id: Int, year: Int, role: String) {
         self.image = image
         self.title = title
         self.id = id
         self.year = year
+        self.role = role
     }
     
     func getDetails() {
