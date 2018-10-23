@@ -77,5 +77,44 @@ class NewAlbum {
             self.tracklist = tracklist
         })
     }
+}
+
+class UserProfile {
+    var username: String?
+    var profileText: String?
+    var name: String?
+    var avatar: String?
+    var homePage: String?
+    var location: String?
+    var currency: String?
+    var rank: Int?
+    var sellerRank: Int?
+    var buyerRank: Int?
     
+    init(username: String, profileText: String, name: String, avatar: String, homePage: String, location: String, currency: String, rank: Int, sellerRank: Int, buyerRank: Int) {
+        self.username = username
+        self.profileText = profileText
+        self.name = name
+        self.avatar = avatar
+        self.homePage = homePage
+        self.location = location
+        self.currency = currency
+        self.rank = rank
+        self.sellerRank = sellerRank
+        self.buyerRank = buyerRank
+    }
+    
+    init? (json: JSON) {
+        let jsonDictionary = json.dictionary!
+        self.name = jsonDictionary["username"]?.stringValue
+        self.avatar = jsonDictionary["avatar_url"]?.stringValue
+        self.username = jsonDictionary["username"]?.stringValue
+        self.profileText = jsonDictionary["profile"]?.stringValue
+        self.homePage = jsonDictionary["home_page"]?.stringValue
+        self.location = jsonDictionary["location"]?.stringValue
+        self.currency = jsonDictionary["curr_abbr"]?.stringValue
+        self.rank = jsonDictionary["rank"]?.intValue
+        self.sellerRank = jsonDictionary["seller_rating"]?.intValue
+        self.buyerRank = jsonDictionary["buyer_rating"]?.intValue
+    }
 }

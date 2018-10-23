@@ -13,14 +13,16 @@ import SwiftyJSON
 class NewSearchService {
     static let baseURL = "https://api.discogs.com/"
     
+    static let key = "GRotkKVHOslgzJkcAcdG"
+    static let secret = "MfUPtAHUaIedWylwAZkhNJkYeJGswXCh"
     
     static func findArtist(name: String, completion: @escaping ([Artist]) -> Void) {
         let databaseSearch = "database/search"
         let parameters: Parameters = [
             "q" : name,
             "type" : "artist",
-            "key" : "GRotkKVHOslgzJkcAcdG",
-            "secret" : "MfUPtAHUaIedWylwAZkhNJkYeJGswXCh"
+            "key" : key,
+            "secret" : secret
         ]
         
         Alamofire.request(baseURL+databaseSearch, parameters: parameters).responseJSON(completionHandler: { response in
@@ -41,8 +43,8 @@ class NewSearchService {
     static func getArtist(id: Int, completion: @escaping (NewArtist) -> Void) {
         let databaseSearch = "artists/\(id)"
         let parameters: Parameters = [
-            "key" : "GRotkKVHOslgzJkcAcdG",
-            "secret" : "MfUPtAHUaIedWylwAZkhNJkYeJGswXCh"
+            "key" : key,
+            "secret" : secret
         ]
         
         Alamofire.request(baseURL+databaseSearch, parameters: parameters).responseJSON(completionHandler: { response in
@@ -57,8 +59,8 @@ class NewSearchService {
     static func getAlbumDetails(id: Int, completion: @escaping(_ qualityImage: String, _ tracklist: [String]) -> ()) {
         let albumUrl = "masters/\(id)"
         let parameters: Parameters = [
-            "key" : "GRotkKVHOslgzJkcAcdG",
-            "secret" : "MfUPtAHUaIedWylwAZkhNJkYeJGswXCh"
+            "key" : key,
+            "secret" : secret
         ]
         
         Alamofire.request(Album.baseURL+albumUrl, method: .get, parameters: parameters).responseJSON(completionHandler: { response in
@@ -79,8 +81,8 @@ class NewSearchService {
     static func getArtistImages(artistId: Int, completion: @escaping ([String]) -> Void) {
         let artistUrl = "artists/\(artistId)"
         let parameters: Parameters = [
-            "key" : "GRotkKVHOslgzJkcAcdG",
-            "secret" : "MfUPtAHUaIedWylwAZkhNJkYeJGswXCh"
+            "key" : key,
+            "secret" : secret
         ]
         
         Alamofire.request(baseURL+artistUrl, parameters: parameters).responseJSON(completionHandler: { response in
@@ -103,8 +105,8 @@ class NewSearchService {
         let parameters: Parameters = [
             "sort" : "year",
             "per_page" : "400",
-            "key" : "GRotkKVHOslgzJkcAcdG",
-            "secret" : "MfUPtAHUaIedWylwAZkhNJkYeJGswXCh"
+            "key" : key,
+            "secret" : secret
         ]
         
         Alamofire.request(baseURL+artistReleaseUrl, parameters: parameters).responseJSON(completionHandler: { response in
@@ -120,6 +122,8 @@ class NewSearchService {
             }
         })
     }
+    
+    
 }
     
 

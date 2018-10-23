@@ -36,13 +36,13 @@ class BandInfoViewCell: UITableViewCell {
         }
     }
     
-    func configureCell (artist: NewArtist) {
+    func configureCell (artist: NewArtist, navigationController: UINavigationController) {
         self.imageUrls = artist.images ?? [String]()
         self.bandName.text = artist.name
         self.bioTextView.text = artist.bio
         self.relatedBands = artist.relatedBands
         self.pagerView.transformer = FSPagerViewTransformer(type: .depth)
-        
+        self.navController = navigationController
     }
     
     override func awakeFromNib() {
@@ -50,11 +50,6 @@ class BandInfoViewCell: UITableViewCell {
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
 

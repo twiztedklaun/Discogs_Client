@@ -23,14 +23,36 @@ class AuthorizeService {
             accessTokenUrl:  "https://api.discogs.com/oauth/access_token"
         )
         
+        
         oauthswift.authorize(
             withCallbackURL: URL(string: "discogs-client://Learning.Discogs-Client")!,
             success: { credential, response, parameters in
                 print(credential.oauthToken)
                 print(credential.oauthTokenSecret)
+                
                 token = credential.oauthToken
                 tokenSecret = credential.oauthTokenSecret
                 isAuthorized = true
+            
+                
+//                let getRequest = oauthswift.client.get("https://api.discogs.com/oauth/identity", success: { (response) in
+//                    guard let dataString = response.string else { return }
+//                    print(dataString)
+//                }, failure: { (error) in
+//                    print("error")
+//                })
+                
+                
+//
+//                let test = oauthswift.client.post("https://api.discogs.com/users/twizted_klaun", success: { (response) in
+//                    guard let dataString = response.string else { return }
+//                    print(dataString)
+//                }, failure: { (error) in
+//
+//                    print("error")
+//                })
+                
+                
                 completionOnSuccess()
             },
             failure: { error in
@@ -40,6 +62,7 @@ class AuthorizeService {
         )
         return oauthswift
     }
+    
     
     static var isAuthorized = false
     

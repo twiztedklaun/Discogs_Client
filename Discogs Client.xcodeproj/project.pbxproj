@@ -14,6 +14,7 @@
 		7845B3872014E10000E7C43A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845B3862014E0FF00E7C43A /* MainViewController.swift */; };
 		7845B38A2014E78300E7C43A /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845B3892014E78300E7C43A /* SearchService.swift */; };
 		7845B38C201503B600E7C43A /* MainViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7845B38B201503B600E7C43A /* MainViewControllerCell.swift */; };
+		78693843217F698B007657FA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78693842217F698B007657FA /* UserProfileViewController.swift */; };
 		786B1D5A201A432100D456BF /* BandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B1D59201A432100D456BF /* BandViewController.swift */; };
 		786B1D5C201A434500D456BF /* BandViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B1D5B201A434500D456BF /* BandViewCell.swift */; };
 		786B1D5E201A435C00D456BF /* BandViewControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B1D5D201A435C00D456BF /* BandViewControllerService.swift */; };
@@ -48,6 +49,7 @@
 		7845B3862014E0FF00E7C43A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7845B3892014E78300E7C43A /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		7845B38B201503B600E7C43A /* MainViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerCell.swift; sourceTree = "<group>"; };
+		78693842217F698B007657FA /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		786B1D59201A432100D456BF /* BandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandViewController.swift; sourceTree = "<group>"; };
 		786B1D5B201A434500D456BF /* BandViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandViewCell.swift; sourceTree = "<group>"; };
 		786B1D5D201A435C00D456BF /* BandViewControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandViewControllerService.swift; sourceTree = "<group>"; };
@@ -121,7 +123,9 @@
 				78AF6E4B214EF4510014BCB5 /* Colors.swift */,
 				78EEE77A21552D2B00B924C7 /* OldProgram */,
 				78EEE77B215531C600B924C7 /* Models */,
+				78EC659B200BAD820053BFB9 /* ViewController.swift */,
 				788F18EE214EBD4100802C31 /* SearchTableViewController.swift */,
+				78693842217F698B007657FA /* UserProfileViewController.swift */,
 				788F18F0214EBD6000802C31 /* SearchTableViewCell.swift */,
 				78EEE7742155217300B924C7 /* BandInfoTableViewController.swift */,
 				78EEE7762155219700B924C7 /* BandInfoViewCell.swift */,
@@ -151,8 +155,6 @@
 				7845B3862014E0FF00E7C43A /* MainViewController.swift */,
 				7845B38B201503B600E7C43A /* MainViewControllerCell.swift */,
 				7845B3892014E78300E7C43A /* SearchService.swift */,
-				78EC659B200BAD820053BFB9 /* ViewController.swift */,
-				7845B3822014CBA400E7C43A /* AuthorizeService.swift */,
 			);
 			path = OldProgram;
 			sourceTree = "<group>";
@@ -162,6 +164,7 @@
 			children = (
 				78EEE77C215531E000B924C7 /* Models.swift */,
 				78EEE780215532EA00B924C7 /* NewSearchService.swift */,
+				7845B3822014CBA400E7C43A /* AuthorizeService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				786B1D5C201A434500D456BF /* BandViewCell.swift in Sources */,
 				780D366E20A7429800E13F60 /* LyricsModel.swift in Sources */,
 				7845B3872014E10000E7C43A /* MainViewController.swift in Sources */,
+				78693843217F698B007657FA /* UserProfileViewController.swift in Sources */,
 				786B1D5A201A432100D456BF /* BandViewController.swift in Sources */,
 				781D2F00215A810500E56C6E /* BandInfoCollectionViewCell.swift in Sources */,
 				78A2045D216DFDFF009012FA /* AlbumPictureCell.swift in Sources */,

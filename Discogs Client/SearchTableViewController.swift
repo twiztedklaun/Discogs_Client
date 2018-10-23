@@ -8,6 +8,8 @@
 
 import UIKit
 import AlamofireImage
+import Alamofire
+import OAuthSwift
 
 class SearchTableViewController: UITableViewController {
     
@@ -23,6 +25,8 @@ class SearchTableViewController: UITableViewController {
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.tintColor = Colors.veryLight
         search.searchBar.delegate = self
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

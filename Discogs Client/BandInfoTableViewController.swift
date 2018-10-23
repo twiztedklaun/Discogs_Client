@@ -106,8 +106,7 @@ class BandInfoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bandInfoCell", for: indexPath) as! BandInfoViewCell
-            cell.configureCell(artist: artist!)
-            cell.navController = self.navigationController
+            cell.configureCell(artist: artist!, navigationController: self.navigationController!)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "bandAlbumCell", for: indexPath) as! BandAlbumsCell
