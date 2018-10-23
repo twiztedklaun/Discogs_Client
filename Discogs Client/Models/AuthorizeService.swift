@@ -33,25 +33,6 @@ class AuthorizeService {
                 token = credential.oauthToken
                 tokenSecret = credential.oauthTokenSecret
                 isAuthorized = true
-            
-                
-//                let getRequest = oauthswift.client.get("https://api.discogs.com/oauth/identity", success: { (response) in
-//                    guard let dataString = response.string else { return }
-//                    print(dataString)
-//                }, failure: { (error) in
-//                    print("error")
-//                })
-                
-                
-//
-//                let test = oauthswift.client.post("https://api.discogs.com/users/twizted_klaun", success: { (response) in
-//                    guard let dataString = response.string else { return }
-//                    print(dataString)
-//                }, failure: { (error) in
-//
-//                    print("error")
-//                })
-                
                 
                 completionOnSuccess()
             },
