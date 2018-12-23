@@ -27,6 +27,7 @@
 		78A2045F216DFE17009012FA /* TracklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2045E216DFE17009012FA /* TracklistCell.swift */; };
 		78AF6E4C214EF4510014BCB5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF6E4B214EF4510014BCB5 /* Colors.swift */; };
 		78CC6578202B902300455B1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78EC659D200BAD820053BFB9 /* Main.storyboard */; };
+		78DCC13221CFE39500197ADD /* SaveUserInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DCC13121CFE39500197ADD /* SaveUserInformationService.swift */; };
 		78EC659A200BAD820053BFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC6599200BAD820053BFB9 /* AppDelegate.swift */; };
 		78EC659C200BAD820053BFB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC659B200BAD820053BFB9 /* ViewController.swift */; };
 		78EC65A1200BAD820053BFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78EC65A0200BAD820053BFB9 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		78A2045E216DFE17009012FA /* TracklistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracklistCell.swift; sourceTree = "<group>"; };
 		78AF6E4B214EF4510014BCB5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		78CC657A202B945900455B1E /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DCC13121CFE39500197ADD /* SaveUserInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserInformationService.swift; sourceTree = "<group>"; };
 		78EC6596200BAD820053BFB9 /* Discogs Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discogs Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EC6599200BAD820053BFB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78EC659B200BAD820053BFB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				78EEE77C215531E000B924C7 /* Models.swift */,
 				78EEE780215532EA00B924C7 /* NewSearchService.swift */,
 				7845B3822014CBA400E7C43A /* AuthorizeService.swift */,
+				78DCC13121CFE39500197ADD /* SaveUserInformationService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				788F18EF214EBD4100802C31 /* SearchTableViewController.swift in Sources */,
 				787C5119208CC9CA004C832F /* AlbumTableViewCell.swift in Sources */,
 				78EC659C200BAD820053BFB9 /* ViewController.swift in Sources */,
+				78DCC13221CFE39500197ADD /* SaveUserInformationService.swift in Sources */,
 				78EEE779215522FF00B924C7 /* BandAlbumsCell.swift in Sources */,
 				7845B38A2014E78300E7C43A /* SearchService.swift in Sources */,
 				780D366C20A7425E00E13F60 /* LyricsViewController.swift in Sources */,

@@ -32,27 +32,58 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var sellerRatingNumberLabel: UILabel!
     @IBOutlet weak var buyerRatingLabel: UILabel!
     @IBOutlet weak var buyerRatingNumberRating: UILabel!
-    
-    var profile: UserProfile?
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var saveButton: UIButton!
+   
+    func gatherAndUpdateProfile() {
+        guard let username = usernameTextField.text else { return }
+        guard let name = nameTextField.text else { return }
+        guard let profileInfo = aboutMeTextField.text else { return }
+        guard let location = locationTextField.text else { return }
+        guard let homePage = homepageTextField.text else { return }
+        guard let currency = currencyTextField.text else { return }
         
+        profile?.username = username
+        profile?.name = name
+        profile?.profileText = profileInfo
+        profile?.location = location
+        profile?.homePage = homePage
+        profile?.currency = currency
+    }
+    
+    var profile: UserProfile? {
+        didSet {
+            guard let imageURL = URL(string: (self.profile?.avatar)!) else { return }
+            self.avatarImage.af_setImage(withURL: imageURL)
+            usernameTextField.text = profile?.username
+            nameTextField.text = profile?.name
+            aboutMeTextField.text = profile?.profileText
+            locationTextField.text = profile?.location
+            homepageTextField.text = profile?.homePage
+            currencyTextField.text = profile?.currency
+            buyerRatingNumberRating.text = String(describing: profile!.buyerRank!)
+            sellerRatingNumberLabel.text = String(describing: profile!.sellerRank!)
+            rankNumberLabel.text = String(describing: profile!.rank!)
+        }
+    }
+    
+    func getInformationFromEndpoint() {
         let oauth = OAuthSwiftClient(consumerKey: NewSearchService.key, consumerSecret: NewSearchService.secret, oauthToken: AuthorizeService.token, oauthTokenSecret: AuthorizeService.tokenSecret, version: OAuthSwiftCredential.Version.oauth1)
         oauth.get("https://api.discogs.com/users/twizted_klaun", success: { (response) in
             guard let dataString = response.string else { return }
             self.profile = UserProfile(json: JSON.init(parseJSON: dataString))
-            guard let imageURL = URL(string: (self.profile?.avatar)!) else { return }
-            self.avatarImage.af_setImage(withURL: imageURL)
         }) { (error) in
             print(error)
         }
-        
-        
-        
     }
     
-
+    @IBAction func saveInformation(_ sender: Any) {
+        gatherAndUpdateProfile()
+        profile?.uploadUserData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getInformationFromEndpoint()
+    }
 
 }
